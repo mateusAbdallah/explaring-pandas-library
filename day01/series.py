@@ -3,64 +3,48 @@
 import pandas as pd
 # %%
 # List with 4 elements
-ages=[10,20,11,59,20]
+ages=[30, 42, 90, 34]
 ages
 
 # %%
-#Sum
-sm = sum(ages) 
-sm
-# %%
-#Mean
-mean = sm / len(ages)
+#Mean of the list
+mean = sum(ages)/len(ages) 
 mean
-
 # %%
 #Variance
-
 total = 0
 for i in ages:
-    total += (i - mean)**2
-
+    total += (mean - i)**2
 variance = total / (len(ages) - 1)
 variance
 
 # %%
-#Creating a Series object
-series_ages = pd.Series(ages)
-series_ages
+# Creating an object Series from pandas
+ages_series = pd.Series(ages)
+ages_series
 
 # %%
-#Average
-series_ages.mean()
+#Getting the mean through pandas
+ages_series.mean()
 
 # %%
-#Variance
-series_ages.var()
+#Getting the variance through pandas
+ages_series.var()
 
 # %%
-#Standard deviation
-series_ages.std()
+#Getting the median through pandas
+ages_series.median()
 
 # %%
-#Finding the element by the position
-
-series_ages.iloc[3]
-
-# %%
-#Changing the indexes
-series_ages.index = ['a', 'b', 'c', 'd', 'e']
-series_ages
+#Getting some statistics through pandas
+ages_series.describe()
 
 # %%
-#Finding elements by the index
-series_ages.loc['b']
+#Getting the dimension of the series through pandas
+#Returns a tuple
+ages_series.shape
 
-# %% 
-#By position
-series_ages[1]
+# %%
+ages_series
 
-# %% 
-#Naming the Series
-series_ages = pd.Series(ages, name='Ages')
-series_ages
+
