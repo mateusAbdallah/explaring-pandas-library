@@ -2,16 +2,16 @@
 # %%
 import pandas as pd
 # %%
-# List with 4 elements
+# list with 4 elements
 ages=[30, 42, 90, 34]
 ages
 
 # %%
-#Mean of the list
+# mean of the list
 mean = sum(ages)/len(ages) 
 mean
 # %%
-#Variance
+# variance
 total = 0
 for i in ages:
     total += (mean - i)**2
@@ -19,32 +19,58 @@ variance = total / (len(ages) - 1)
 variance
 
 # %%
-# Creating an object Series from pandas
+# creating an object Series from pandas
 ages_series = pd.Series(ages)
 ages_series
 
 # %%
-#Getting the mean through pandas
+# getting the mean through pandas
 ages_series.mean()
 
 # %%
-#Getting the variance through pandas
+# getting the variance through pandas
 ages_series.var()
 
 # %%
-#Getting the median through pandas
+# getting the median through pandas
 ages_series.median()
 
 # %%
-#Getting some statistics through pandas
+# getting some statistics through pandas
 ages_series.describe()
 
 # %%
-#Getting the dimension of the series through pandas
-#Returns a tuple
+# getting the dimension of the series through pandas
+# returns a tuple
 ages_series.shape
 
 # %%
 ages_series
 
+# %%
+# returns index 1
+ages_series[1]
 
+# %%
+# setting other indexes
+ages_series.index = ['m', 'r', 'h', 'b']
+ages_series
+
+# %%
+# loc finds value based on index
+print(ages_series)
+ages_series.loc['m']
+
+# %%
+print(ages_series)
+# iloc finds values based on position
+ages_series.iloc[3]
+
+# %%
+# iloc allows to use slice
+ages_series.iloc[0:3]
+
+# %%
+# setting a name for the Series
+ages_series.name = 'Random Ages'
+ages_series
