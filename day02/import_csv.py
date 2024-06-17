@@ -46,3 +46,13 @@ df_max_point
 columns = ['Name', 'UUID', 'Points']
 df_customers[columns]
 
+# %%
+
+columns = df_customers.columns.tolist()
+columns.sort()
+# %%
+
+df_customers
+# %%
+
+df_customers[columns]
