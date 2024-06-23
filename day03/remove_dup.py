@@ -11,7 +11,7 @@ df
 # %%
 # getting the last transaction of each customer
 
-df = (df.sort_values(by='DtTransaction', ascending=False)
+df = (df.sort_values('DtTransaction', ascending=False)
     .drop_duplicates(subset=['IdCustomer'])) 
 df
 
