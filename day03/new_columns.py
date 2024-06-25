@@ -20,3 +20,7 @@ def get_first(nome:str):
 
 df['first_name'] = df['Name'].apply(get_first)
 df
+
+# %%
+#another way to apply function
+df['Name'].apply(lambda x: x.upper().split('_')[0])
