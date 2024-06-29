@@ -23,12 +23,14 @@ df['age'].isna().sum()
 df.isna().sum()
 
 # %%
+#getting the proportion of na values in the dataFrame
 
 df.isna().mean()
 
 # %%
+#filling missing values with the mean
 
-df.fillna({
+df = df.fillna({
     'age': df["age"].mean(),
     'weight': df["weight"].mean()
 })
