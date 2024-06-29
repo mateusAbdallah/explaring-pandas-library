@@ -22,3 +22,16 @@ df['age'].isna().sum()
 
 df.isna().sum()
 
+# %%
+
+df.isna().mean()
+
+# %%
+
+df.fillna({
+    'age': df["age"].mean(),
+    'weight': df["weight"].mean()
+})
+
+
+
