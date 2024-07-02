@@ -24,3 +24,8 @@ df.fillna({
 # %%
 
 df.dropna(subset=['age', 'weight'], how='all')
+
+# %%
+# axis 0 for rows, axis 1 for columns
+# thresh looks for non-na values
+df.dropna(axis=1, thresh=3)
