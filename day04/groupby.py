@@ -14,4 +14,12 @@ df_summary.reset_index()
 
 # %%
 
-        
+df_agg = (df.groupby(["IdCustomer"])
+    .agg({"Points": "sum",
+          "UUID": "count",
+          "DtTransaction": "max"
+        })
+    .reset_index()
+)   
+
+df_agg      
