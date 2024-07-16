@@ -23,5 +23,16 @@ df_agg = (df.groupby(["IdCustomer"])
                      "DtTransaction": "Last_Date"})      
     .reset_index()
 )   
-
 df_agg
+
+# %%
+
+import datetime
+
+date1 = df["DtTransaction"][0]
+now = datetime.datetime.now()
+
+(now - date1).days
+
+# %%
+    
