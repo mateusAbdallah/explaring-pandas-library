@@ -34,5 +34,5 @@ now = datetime.datetime.now()
 
 (now - date1).days
 
-# %%
+# %%                                                                                                                   
     
