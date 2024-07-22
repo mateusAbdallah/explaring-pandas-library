@@ -34,5 +34,20 @@ now = datetime.datetime.now()
 
 (now - date1).days
 
-# %%                                                                                                                   
-    
+# %%
+
+def recencia (x):
+    diff = datetime.datetime.now() - x.max()
+    return diff.days
+
+
+(df.groupby(["IdCustomer"])
+    .agg({"Points": "sum",
+          "UUID": "count",
+          "DtTransaction": ["max", recencia]
+          })
+    .rename(columns={"Points": "Value",
+                     "UUID": "Frequency",
+                     "DtTransaction": "Last_Date"})      
+    .reset_index()
+)   
