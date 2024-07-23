@@ -41,7 +41,7 @@ def recencia (x):
     return diff.days
 
 
-(df.groupby(["IdCustomer"])
+(df.groupby(["IdCustomer"]) 
     .agg({"Points": "sum",
           "UUID": "count",
           "DtTransaction": ["max", recencia]
